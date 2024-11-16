@@ -5,6 +5,7 @@ import Image from "next/image";
 import avatar from "@mock/sparks/img/avatar.png";
 import { useState } from "react";
 import { toast } from "react-toastify";
+
 export default function PredictView() {
   const [commitment, setCommitment] = useState(0);
 
