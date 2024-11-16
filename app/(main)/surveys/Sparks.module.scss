@@ -1,0 +1,44 @@
+@use "@styles/variables" as vars;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  position: absolute;
+  gap: 16px;
+  bottom: 250px;
+  z-index: vars.$z-index-swipe-controls;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: #575e70;
+  background: #292e39;
+  box-shadow: 0 0 10px 0 #0000004d;
+  transition: all 0.2s ease;
+
+  &:active {
+    transform: scale(1.2);
+    color: vars.$color-main-accent;
+  }
+}
+
+.add {
+  border-radius: 70px;
+}
+
+.button {
+  margin-top: 20px;
+  width: 50px;
+  height: 20px;
+  background-color: red;
+}
