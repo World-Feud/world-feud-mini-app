@@ -5,9 +5,11 @@ import Image from "next/image";
 import avatar from "@mock/sparks/img/avatar.png";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Comment from "@components/Comment/Comment";
 
 export default function PredictView() {
   const [commitment, setCommitment] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const increaseCommitment = () => setCommitment(commitment + 1);
   const decreaseCommitment = () =>
@@ -28,8 +30,8 @@ export default function PredictView() {
           height={100}
         />
         <div className={styles.poolDetails}>
-          <h2>What's the hottest tech right now?</h2>
-          <p>$ 1,478,230</p>
+          <h2>What is the hottest tech right now?</h2>
+          <p>$ 478,230</p>
           <p>2k votes | 203 comments</p>
         </div>
       </div>
@@ -67,11 +69,14 @@ export default function PredictView() {
         <button
           className={styles.predictButton}
           onClick={async () => {
+            setIsLoading(true);
             await new Promise((resolve) => setTimeout(resolve, 1500));
+            setIsLoading(false);
             toast.success(`Prediction successfully sent! ${commitment} WLD`);
           }}
+          disabled={isLoading || commitment === 0}
         >
-          PREDICT
+          {isLoading ? "Submitting..." : "Predict"}
         </button>
       </div>
 
@@ -79,22 +84,10 @@ export default function PredictView() {
         className={styles.comments}
         style={{ marginTop: "26px", marginBottom: "26px" }}
       >
-        <h3>Comments</h3>
-        <ul className={styles.commentList}>
-          <li className={styles.commentItem}>
-            <p className={styles.commentAuthor}>Alex</p>
-            <p className={styles.commentText}>
-              NextJS is probably the hottest tech right now.
-            </p>
-          </li>
-          <li className={styles.commentItem}>
-            <p className={styles.commentAuthor}>John</p>
-            <p className={styles.commentText}>
-              Rust is probably the hottest tech right now.
-            </p>
-          </li>
-          {/* Add more comments as needed */}
-        </ul>
+        <h3 style={{ marginBottom: "16px" }}>Comments</h3>
+
+        {/* Add more comments as needed */}
+        <Comment />
       </div>
     </div>
   );
