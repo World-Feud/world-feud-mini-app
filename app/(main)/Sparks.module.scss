@@ -10,7 +10,15 @@
   display: flex;
   position: absolute;
   gap: 16px;
-  bottom: 250px;
+  bottom: 150px;
+  z-index: vars.$z-index-swipe-controls;
+}
+
+.verify {
+  display: flex;
+  position: absolute;
+  gap: 16px;
+  bottom: 100px;
   z-index: vars.$z-index-swipe-controls;
 }
 

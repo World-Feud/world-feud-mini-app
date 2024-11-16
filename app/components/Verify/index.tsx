@@ -7,6 +7,7 @@ import {
   IVerifyResponse,
 } from "@worldcoin/minikit-js";
 import { useCallback, useState } from "react";
+import styles from "./Verify.module.scss";
 
 export type VerifyCommandInput = {
   action: string;
@@ -15,12 +16,12 @@ export type VerifyCommandInput = {
 };
 
 const verifyPayload: VerifyCommandInput = {
-  action: "test-action", // This is your action ID from the Developer Portal
+  action: "verification-action", // This is your action ID from the Developer Portal
   signal: "",
-  verification_level: VerificationLevel.Orb, // Orb | Device
+  verification_level: VerificationLevel.Device, // Orb | Device
 };
 
-export const VerifyBlock = () => {
+export const VerifyBlock = ({ onVerify }: { onVerify: () => void }) => {
   const [handleVerifyResponse, setHandleVerifyResponse] = useState<
     MiniAppVerifyActionErrorPayload | IVerifyResponse | null
   >(null);
@@ -59,21 +60,22 @@ export const VerifyBlock = () => {
     const verifyResponseJson = await verifyResponse.json();
 
     if (verifyResponseJson.status === 200) {
-      console.log("Verification success!");
+      console.log("Verification success! 5 Worldcoins added to your balance.");
       console.log(finalPayload);
     }
+
+    onVerify();
 
     setHandleVerifyResponse(verifyResponseJson);
     return verifyResponseJson;
   }, []);
 
   return (
-    <div>
-      <h1>Verify Block</h1>
-      <button className="bg-green-500 p-4" onClick={handleVerify}>
-        Test Verify
+    <div className={styles.root}>
+      <button className={styles.button} onClick={handleVerify}>
+        Verify your humanity
       </button>
-      <span>{JSON.stringify(handleVerifyResponse, null, 2)}</span>
+      {/* <span>{JSON.stringify(handleVerifyResponse, null, 2)}</span> */}
     </div>
   );
 };

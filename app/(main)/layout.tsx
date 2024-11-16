@@ -5,6 +5,8 @@ import MiniKitProvider from "@components/minikit-provider";
 import dynamic from "next/dynamic";
 import NextAuthProvider from "@components/next-auth-provider";
 import BottomNavigation from "@components/BottomNavigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,6 +32,7 @@ export default function RootLayout({
             <body>
               {children}
               <BottomNavigation />
+              <ToastContainer />
             </body>
           </MiniKitProvider>
         </ErudaProvider>

@@ -1,13 +1,20 @@
-import { PayBlock } from "@components/Pay";
-import { SignIn } from "@components/SignIn";
-import { VerifyBlock } from "@components/Verify";
+"use client";
 
-export default function Home() {
+import styles from "./Sparks.module.scss";
+
+import SwipingDesk from "@components/SwipingDesk/SwipingDesk";
+import Categories from "@components/Categories/Categories";
+import SwipeIndicator from "@components/SwipeIndicator/SwipeIndicator";
+import { CardProvider } from "context/CardContext";
+
+export default function SparksView() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-y-3">
-      <SignIn />
-      <VerifyBlock />
-      <PayBlock />
-    </main>
+    <CardProvider>
+      <div className={styles.root}>
+        <Categories />
+        <SwipeIndicator />
+        <SwipingDesk />
+      </div>
+    </CardProvider>
   );
 }

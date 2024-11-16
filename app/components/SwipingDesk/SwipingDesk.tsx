@@ -6,6 +6,7 @@ import { useDrag } from "@use-gesture/react";
 import styles from "./SwipingDesk.module.scss";
 import SwipingCard from "@components/SwipingCard/SwipingCard";
 import { mockSparks } from "@mock/sparks/mockSparks";
+import { useCardContext } from "../../context/CardContext";
 
 const to = (i: number, topIndex: number) => ({
   x: 0,
@@ -23,6 +24,8 @@ const trans = (r: number, s: number) =>
 const SwipingDesk: React.FC = () => {
   const [gone] = useState(() => new Set());
   const [cards, setCards] = useState(mockSparks);
+  const { currentCardId, setCurrentCardId } = useCardContext();
+
   const [topIndex, setTopIndex] = useState(cards.length - 1);
   const [swipeMessage, setSwipeMessage] = useState<string | null>(null);
   const [animate, setAnimate] = useState(false);
@@ -177,24 +180,23 @@ const SwipingDesk: React.FC = () => {
 
   return (
     <div className={styles.deckContainer}>
-      {springs.map(({ x, y, rot, scale }, i) =>
-        i >= topIndex - 2 ? (
-          <SwipingCard
-            id={cards[i].id}
-            key={i}
-            bind={bind}
-            index={i}
-            x={x}
-            y={y}
-            rot={rot}
-            scale={scale}
-            image={cards[i].image}
-            title={cards[i].title}
-            trans={trans}
-            user={cards[i].user}
-          />
-        ) : null
-      )}
+      <SwipingCard
+        id={cards[currentCardId].id}
+        key={currentCardId}
+        bind={bind}
+        index={currentCardId}
+        image={cards[currentCardId].image}
+        title={cards[currentCardId].title}
+        trans={trans}
+        user={cards[currentCardId].user}
+        onSwipe={() => {
+          if (currentCardId < cards.length - 1) {
+            setCurrentCardId(currentCardId + 1);
+          } else {
+            setCurrentCardId(0);
+          }
+        }}
+      />
     </div>
   );
 };

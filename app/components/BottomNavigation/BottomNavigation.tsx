@@ -13,9 +13,9 @@ type Tab = {
 };
 
 const tabs: Tab[] = [
-  { name: "Home", path: "/", icon: "home" },
-  { name: "Surveys", path: "/surveys", icon: "sparks" },
+  { name: "Surveys", path: "/", icon: "sparks" },
   { name: "Predict", path: "/predict", icon: "pools" },
+  { name: "Leaderboard", path: "/leaderboard", icon: "users" },
 ];
 
 export const BottomNavigation = () => {

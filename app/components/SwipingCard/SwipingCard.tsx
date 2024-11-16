@@ -1,27 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { animated, SpringValue } from "@react-spring/web";
 import Icon from "@components/Icon";
 import clsx from "clsx";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
 import styles from "./SwipingCard.module.scss";
+import { VerifyBlock } from "@components/Verify";
+import { toast } from "react-toastify";
 
 interface SwipingCardProps {
   id: number;
   bind: any;
   index: number;
-  x: SpringValue<number>;
-  y: SpringValue<number>;
-  rot: SpringValue<number>;
-  scale: SpringValue<number>;
   title: string;
   user: {
     username: string;
     avatarImage: StaticImageData;
   };
   image: StaticImageData;
+  onSwipe: () => void;
   trans: (r: number, s: number) => string;
   withShadow?: boolean;
 }
@@ -30,25 +28,27 @@ const SwipingCard: React.FC<SwipingCardProps> = ({
   id,
   bind,
   index,
-  x,
-  y,
-  rot,
-  scale,
   image,
   trans,
   title,
   user,
   withShadow,
+  onSwipe,
 }) => {
-  const router = useRouter();
+  const [verified, setVerified] = useState(
+    () => localStorage.getItem("verified") === "true"
+  );
 
   const handleDoubleClick = () => {
     console.log("double click");
-    router.push(`/sparks/${id}`);
   };
 
   const handleShareClick = () => console.log("Share clicked");
   const handleCommentsClick = () => console.log("Comments clicked");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("Input changed:", event.target.value);
+  };
 
   return (
     <animated.div className={styles.deck}>
@@ -84,18 +84,10 @@ const SwipingCard: React.FC<SwipingCardProps> = ({
           </div>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.description}>
-            Biden considers deporting Elon because it is reported by the WSJ
-            that he worked on his startup...
+            Tech enthusiasts are debating the hottest tech right now.
           </p>
         </div>
         <div className={styles.footer}>
-          <button
-            className={clsx(styles.button, styles.expand)}
-            onClick={() => router.push(`/sparks/${id}`)}
-          >
-            <Icon name="expand" />
-            <span>Show more</span>
-          </button>
           <div className={styles.footerLeft}>
             <div className={styles.share} onClick={handleShareClick}>
               <Icon name="share" />
@@ -105,8 +97,29 @@ const SwipingCard: React.FC<SwipingCardProps> = ({
               <Icon name="comments" />
               <span>203</span>
             </div>
+
+            <input
+              type="text"
+              placeholder="Type your answer..."
+              className={styles.input}
+              onChange={handleInputChange}
+            />
           </div>
         </div>
+
+        {!verified ? (
+          <VerifyBlock
+            onVerify={() => {
+              localStorage.setItem("verified", "true");
+              setVerified(true);
+              toast.success("Verification successful!");
+            }}
+          />
+        ) : (
+          <button className={styles.submit} onClick={onSwipe}>
+            Next
+          </button>
+        )}
       </animated.div>
     </animated.div>
   );
