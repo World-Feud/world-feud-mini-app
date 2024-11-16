@@ -1,0 +1,43 @@
+@use '@styles/variables' as vars;
+
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 146px;
+    height: 33px;
+    padding: 5px;
+    border-radius: 40px;
+    background: #191b1f;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 5px 0;
+    border: none;
+    border-radius: 30px;
+    background: transparent;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+
+    &.active {
+        color: #fff;
+    }
+}
+
+.activeIndicator {
+    position: absolute;
+    top: 5px;
+    width: calc(50% - 7.5px);
+    height: 23px;
+    border-radius: 30px;
+    background: #575e70;
+    z-index: 0;
+    transition: left 0.2s ease-in-out;
+}

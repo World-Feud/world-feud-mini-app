@@ -1,0 +1,9 @@
+@use 'variables' as variables;
+
+@function toRem($size) {
+    @return ($size / variables.$rootFontSize) * 1rem;
+}
+
+@function lighten-color($color, $amount: 10%) {
+    @return lighten($color, $amount);
+}
