@@ -30,7 +30,7 @@ const Comment: FC<CommentProps> = (props) => {
       <div className={styles.main}>
         <p className={styles.commentText}>
           NextJS is probably the hottest tech right now. It gives a lot of
-          benefits and I think it's a good choice for a project.
+          benefits and I think it is a good choice for a project.
         </p>
       </div>
       <div className={styles.bottom}>

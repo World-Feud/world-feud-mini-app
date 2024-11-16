@@ -21,7 +21,7 @@ export const mockSparks: Card[] = [
     id: 1,
     category: "Politics",
     image: techBackground,
-    title: "What's the hottest tech right now?",
+    title: "What is the hottest tech right now?",
     user: { username: "green_pineapple420", avatarImage: avatar },
   },
   {
