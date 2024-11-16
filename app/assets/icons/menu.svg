@@ -1,0 +1,19 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_2514_2143)">
+<path d="M12.2004 24.3C18.7174 24.3 24.0004 19.0171 24.0004 12.5C24.0004 5.98305 18.7174 0.700012 12.2004 0.700012C5.68343 0.700012 0.400391 5.98305 0.400391 12.5C0.400391 19.0171 5.68343 24.3 12.2004 24.3Z" fill="#1E1E1E" fill-opacity="0.6"/>
+</g>
+<path d="M6.75365 12.9535C6.503 12.9535 6.2998 12.7503 6.2998 12.4996C6.2998 12.249 6.503 12.0458 6.75365 12.0458" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.75391 12.9535C7.00456 12.9535 7.20775 12.7503 7.20775 12.4996C7.20775 12.249 7.00456 12.0458 6.75391 12.0458" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.2004 12.9535C11.9498 12.9535 11.7466 12.7503 11.7466 12.4996C11.7466 12.249 11.9498 12.0458 12.2004 12.0458" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.2007 12.9535C12.4513 12.9535 12.6545 12.7503 12.6545 12.4996C12.6545 12.249 12.4513 12.0458 12.2007 12.0458" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.6472 12.9535C17.3966 12.9535 17.1934 12.7503 17.1934 12.4996C17.1934 12.249 17.3966 12.0458 17.6472 12.0458" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.6475 12.9535C17.8982 12.9535 18.1013 12.7503 18.1013 12.4996C18.1013 12.249 17.8982 12.0458 17.6475 12.0458" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<filter id="filter0_b_2514_2143" x="-3.59961" y="-3.29999" width="31.6001" height="31.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="2"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2514_2143"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_2514_2143" result="shape"/>
+</filter>
+</defs>
+</svg>

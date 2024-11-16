@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import MiniKitProvider from "@/components/minikit-provider";
+import "../styles/global.scss";
+import MiniKitProvider from "@components/minikit-provider";
 import dynamic from "next/dynamic";
-import NextAuthProvider from "@/components/next-auth-provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import NextAuthProvider from "@components/next-auth-provider";
+import BottomNavigation from "@components/BottomNavigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +29,11 @@ export default function RootLayout({
       <NextAuthProvider>
         <ErudaProvider>
           <MiniKitProvider>
-            <body className={inter.className}>{children}</body>
+            <body>
+              {children}
+              <BottomNavigation />
+              <ToastContainer />
+            </body>
           </MiniKitProvider>
         </ErudaProvider>
       </NextAuthProvider>

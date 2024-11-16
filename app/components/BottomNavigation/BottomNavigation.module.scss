@@ -1,0 +1,67 @@
+@use "@styles/variables" as vars;
+
+.root {
+  z-index: vars.$z-index-bottom-navigation;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 96px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(
+      to top,
+      rgb(41 46 57) 0%,
+      rgb(41 46 57 / 0%) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+.tabs {
+  margin-top: 20px;
+  height: 76px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background: #292e39;
+  backdrop-filter: blur(64px);
+  padding: 12px 10px;
+}
+
+.tab {
+  width: 62px;
+  height: 56px;
+  border-radius: vars.$base-border-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  position: relative;
+  color: #575e70;
+
+  &.isActive {
+    color: vars.$color-main-accent;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}

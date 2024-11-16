@@ -1,0 +1,14 @@
+@use './utils' as utils;
+@use './variables' as vars;
+
+@mixin transition-color($color, $amount: 5%, $duration: vars.$transition-default-duration) {
+    $lightened-color: utils.lighten-color($color, $amount);
+
+    transition: background-color $duration ease;
+    background-color: $color;
+
+    &:hover,
+    &:active {
+        background-color: $lightened-color;
+    }
+}

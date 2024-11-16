@@ -1,0 +1,37 @@
+@use '@styles/variables' as vars;
+
+.root {
+    position: relative;
+    z-index: vars.$z-index-header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 48px;
+    gap: 8px;
+    padding: 12px 16px;
+    background-color: #292e39;
+}
+
+.title {
+    color: #ececec;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+
+    @media screen and (width <= 360px) {
+        font-size: 18px;
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}

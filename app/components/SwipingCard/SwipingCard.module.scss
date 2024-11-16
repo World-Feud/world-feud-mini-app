@@ -1,0 +1,227 @@
+@use "@styles/variables" as vars;
+
+.deck {
+  position: absolute;
+  top: 20px;
+  height: 50vh;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+
+  @media screen and (height <= 700px) {
+    top: 10px;
+  }
+}
+
+.card {
+  cursor: grab;
+  touch-action: none;
+  padding: 20px;
+  background-color: #292e39;
+  color: #fff;
+  border-radius: 10px;
+  width: 300px;
+  height: 430px;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 -4px 10px 0 #0000004d;
+  user-select: none;
+
+  &.withShadow {
+    box-shadow: 4px 4px 80px 6px rgb(0 0 0 / 20%);
+  }
+
+  @media screen and (height <= 700px) {
+    justify-content: flex-start;
+    height: 280px;
+    width: 260px;
+    padding: 10px 10px 0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.cardImage {
+  width: 240px;
+  height: 127px;
+  border-radius: 5px;
+  -webkit-touch-callout: none;
+  user-select: none;
+  pointer-events: none;
+
+  @media screen and (height <= 700px) {
+    width: 220px;
+  }
+}
+
+.body {
+  padding: 10px 0;
+
+  @media screen and (height <= 700px) {
+    padding: 5px 0;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 6px;
+  border: 0.5px solid #323741;
+  padding: 2px;
+  border-radius: 40px;
+}
+
+.username {
+  font-weight: vars.$font-weight-bold;
+  font-size: 12px;
+  user-select: none;
+
+  @media screen and (height <= 700px) {
+    font-size: 10px;
+  }
+}
+
+.avatar {
+  width: 21px;
+  height: 21px;
+  pointer-events: none;
+}
+
+.date {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 13px;
+  text-align: right;
+  text-wrap: nowrap;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  user-select: none;
+
+  @media screen and (height <= 700px) {
+    font-size: 10px;
+  }
+}
+
+.title {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: vars.$font-weight-bold;
+  text-align: left;
+  user-select: none;
+
+  @media screen and (height <= 700px) {
+    padding-top: 8px;
+    font-size: 14px;
+  }
+}
+
+.description {
+  font-size: 14px;
+  font-weight: vars.$font-weight-regular;
+  text-align: left;
+  color: #bfbfbf;
+  user-select: none;
+
+  @media screen and (height <= 700px) {
+    display: none;
+  }
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.expand {
+  justify-self: start;
+}
+
+.footerLeft {
+  display: flex;
+  gap: 15px;
+  justify-self: start;
+  align-items: center;
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #323741;
+    border-radius: 8px;
+    margin-left: 2px;
+    padding: 5px;
+  }
+}
+
+.submit {
+  margin-top: 16px;
+  background-color: #ff538cbb;
+  border-radius: 8px;
+  padding: 8px;
+  margin-left: 8px;
+  color: #fff;
+  font-weight: vars.$font-weight-semi-bold;
+  text-align: center;
+}
+
+.button,
+.share,
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aeaeae;
+  font-size: 12px;
+  font-weight: vars.$font-weight-bold;
+
+  @media screen and (height <= 700px) {
+    font-size: 10px;
+  }
+
+  svg {
+    @media screen and (height <= 700px) {
+      transform: scale(0.7);
+    }
+  }
+}
+
+.button {
+  padding: 6px;
+  border-radius: 8px;
+
+  &:active,
+  &:hover {
+    background-color: rgb(23 25 31 / 66%);
+    color: vars.$color-main-accent;
+  }
+
+  @media screen and (height <= 700px) {
+    padding: 4px;
+  }
+}
+
+.icon {
+  color: #9a9a9a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+}

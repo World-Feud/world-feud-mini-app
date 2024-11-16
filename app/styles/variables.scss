@@ -1,0 +1,67 @@
+/* Light Theme */
+$light-bg-color: #ebebeb;
+$light-bg-gradient: linear-gradient(to bottom, #ebebeb, #fafafa);
+$light-bg-header-color: #e7e7e7;
+
+/* Colors */
+$color-white: rgb(255 255 255);
+$color-bg-light: #eee;
+$color-grey-1: rgb(223 223 224 / 100%);
+$color-grey-04: rgb(255 255 255 / 40%);
+$color-grey-06: rgb(25 27 31 / 60%);
+$color-grey-008: rgb(25 27 31 / 8%);
+$color-grey-004: rgb(25 27 31 / 4%);
+$color-main-accent: rgb(255 83 140);
+$color-black: rgb(2 3 8);
+
+/* Base */
+$root-font-size: 16px;
+$base-box-shadow-color: rgb(0 0 0 / 95%);
+$base-box-shadow: 0 8px 25px $base-box-shadow-color;
+$drop-down-list-shadow: 0 8px 24px -10px rgb(135 160 185 / 30%);
+$base-page-layout-background-color: white;
+$base-scrollbar-width: 6px;
+$base-border-radius: 12px;
+
+/* Fonts */
+$font-family-base: 'Montserrat', sans-serif;
+
+/* Fonts weights */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+/* Breakpoints */
+$breakpoint-xxsmall: 375px;
+$breakpoint-xsmall: 425px;
+$breakpoint-small: 640px;
+$breakpoint-semi-medium: 770px;
+$breakpoint-medium: 900px;
+$breakpoint-semi-large: 1100px;
+$breakpoint-large: 1200px;
+$breakpoint-xlarge: 1440px;
+$breakpoint-xxlarge: 1920px;
+
+/* Transitions */
+$transition-default-duration: 0.3s;
+$transition-default-timing-function: ease-out;
+$transition-default: $transition-default-duration $transition-default-timing-function;
+
+/* Layers */
+$z-index-base: 100;
+$z-index-bottom-navigation: $z-index-base + 1;
+$z-index-swipe-controls: $z-index-bottom-navigation + 1;
+$z-index-header: $z-index-swipe-controls + 1;
+$z-index-categories: $z-index-header + 1;
+$z-index-swipe-indicator: $z-index-categories + 1;
+
+/* Sizes */
+$header-top-height: 40px;
+$header-bottom-height: 80px;
+$header-height: $header-top-height + $header-bottom-height;
+
+$header-top-height-m: 37px;
+$header-bottom-height-m: 106px;
+$header-height-m: $header-top-height-m + $header-bottom-height-m;

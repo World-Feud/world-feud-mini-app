@@ -1,0 +1,114 @@
+.root {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #1e1e1e;
+  color: #fff;
+  overflow: scroll;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 16px;
+}
+
+.pool {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.poolImage {
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+}
+
+.poolDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.publicOpinion {
+  margin-bottom: 16px;
+}
+
+.opinionBar {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #333;
+}
+
+.yes {
+  background-color: #4caf50;
+  text-align: center;
+  color: #fff;
+}
+
+.no {
+  background-color: #f44336;
+  text-align: center;
+  color: #fff;
+}
+
+.commitment {
+  margin-bottom: 16px;
+}
+
+.commitmentControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  button {
+    border: none;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.commitmentButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.predictButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  background-color: #e91e63;
+  width: 100%;
+  border-radius: 16px;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.commentList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.commentItem {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.commentAuthor {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.commentText {
+  margin: 0;
+}
