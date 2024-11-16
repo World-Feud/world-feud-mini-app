@@ -6,7 +6,7 @@ import { useCardContext } from "../../context/CardContext";
 
 type CategoriesProps = {};
 
-const categories = ["Politics", "Crypto", "Sports", "Pop Culture"];
+const categories = ["Technology", "Crypto", "Sports", "Pop Culture"];
 
 const Categories: FC<CategoriesProps> = (props) => {
   const {} = props;

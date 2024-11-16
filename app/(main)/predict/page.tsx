@@ -10,12 +10,21 @@ import Comment from "@components/Comment/Comment";
 export default function PredictView() {
   const [commitment, setCommitment] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [distribution, setDistribution] = useState({ yes: 56, no: 44 });
 
   const increaseCommitment = () => setCommitment(commitment + 1);
   const decreaseCommitment = () =>
     setCommitment(commitment > 0 ? commitment - 1 : 0);
 
   const buttonValues = [5, 10, 20, 50];
+
+  const handleDrag = (e: React.MouseEvent) => {
+    const newYesWidth = Math.min(
+      Math.max((e.clientX / window.innerWidth) * 100, 0),
+      100
+    );
+    setDistribution({ yes: newYesWidth, no: 100 - newYesWidth });
+  };
 
   return (
     <div className={styles.root}>
@@ -38,12 +47,16 @@ export default function PredictView() {
 
       <div className={styles.publicOpinion}>
         <p>Public opinion</p>
-        <div className={styles.opinionBar}>
-          <div className={styles.yes} style={{ width: "65%" }}>
-            NextJS - 65%
+        <div
+          className={styles.opinionBar}
+          onMouseMove={handleDrag}
+          style={{ cursor: "ew-resize" }}
+        >
+          <div className={styles.yes} style={{ width: `${distribution.yes}%` }}>
+            MiniKit - {distribution.yes.toFixed(0)}%
           </div>
-          <div className={styles.no} style={{ width: "35%" }}>
-            Rust - 35%
+          <div className={styles.no} style={{ width: `${distribution.no}%` }}>
+            World ID - {distribution.no.toFixed(0)}%
           </div>
         </div>
       </div>
